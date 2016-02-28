@@ -26,6 +26,7 @@
 
       vm.words = [];
       vm.spinning = false;
+      vm.pegs = pegs;
       vm.spinWheel = spinWheel;
 
       init();
@@ -34,6 +35,11 @@
           angular.forEach(vm.spaces, function(word) {
              vm.words.push(word.split(''));
           });
+      }
+
+      function pegs() {
+          var numPegs = vm.spaces.length * 3;
+          return new Array(numPegs);
       }
 
       function spinWheel() {

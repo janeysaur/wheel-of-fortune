@@ -26,6 +26,7 @@
 
       vm.words = [];
       vm.spinning = false;
+      vm.pegs = pegs;
       vm.spinWheel = spinWheel;
 
       init();
@@ -34,6 +35,11 @@
           angular.forEach(vm.spaces, function(word) {
              vm.words.push(word.split(''));
           });
+      }
+
+      function pegs() {
+          var numPegs = vm.spaces.length * 3;
+          return new Array(numPegs);
       }
 
       function spinWheel() {
@@ -80,7 +86,7 @@ angular.module('app.templates').run(['$templateCache', function($templateCache) 
   'use strict';
 
   $templateCache.put('apps/components/myWheel.directive.html',
-    "<div class=wheel ng-class=\"{ 'spin' : vm.spinning }\"><ul class=circle><li class=slice ng-repeat=\"word in vm.words\"><label class=circle><span ng-repeat=\"letter in word\">{{ letter }}</span></label></li><li class=center ng-click=vm.spinWheel()></li></ul></div>"
+    "<div class=wheel ng-class=\"{ 'spin' : vm.spinning }\"><div class=frame><ul class=pegs><li class=peg ng-repeat=\"i in vm.pegs() track by $index\"></li></ul><ul class=circle><li class=slice ng-repeat=\"word in vm.words\"><label class=circle><span ng-repeat=\"letter in word\">{{ letter }}</span></label></li><li class=center ng-click=vm.spinWheel()></li></ul></div><div class=pointer></div></div>"
   );
 
 }]);

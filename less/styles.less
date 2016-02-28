@@ -1,3 +1,7 @@
+@color-frame: yellow;
+@color-peg: blue;
+@frame-width: 10px;
+
 @keyframes spin {
 	from {
 		transform:rotate(0deg);
@@ -10,106 +14,180 @@
 div.wheel {
 	margin: 5em auto;
 	min-width: 16em; width: 72%; max-width: 40em;
+	position: relative;
+	padding: 10px;
 
 	&.spin {
-		animation-name: spin;
-		animation-duration: 4000ms;
-		animation-iteration-count: 1;
-		animation-timing-function: ease-in-out;
-	}
-}
+		.frame {
+			animation-name: spin;
+			animation-duration: 4000ms;
+			animation-iteration-count: 1;
+			-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+			-moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+			-o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
 
-ul.circle {
-	position: relative;
-	padding: 50%;
-	max-width: 0; max-height: 0;
-	box-shadow: 0 0 .5em rgba(0,0,0,.5);
-	list-style: none;
-	background: black;
-	overflow: hidden;
-
-	&,
-	&:before,
-	&:after {
-		border-radius: 50%;
+		}
 	}
 
-	.slice {
-		overflow: hidden;
-		position: absolute;
+	.frame {
+		position: relative;
+		height: 100%;
+		width: 100%;
 		top: 0;
 		left: 0;
-		width: 50%;
-		height: 50%;
-		border: 1px solid black;
-		box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
-		transform-origin: 100% 100%;
-
-		label {
-			display: block;
-			width: 200%;
-			height: 200%;
-			box-shadow: 0 0 .1em black;
-			line-height: 1.9em;
-			text-align: center;
-			text-decoration: none;
-			max-width: 200%;
-
-			span {
-				display: block;
-				text-transform: uppercase;
-			}
-
-			.shrink-letters(4);
-
-			.shrink-letters(@n, @i: 1) when (@i =< @n) {
-				@start: 48px;
-				@increment: 5px;
-
-				span:nth-child(@{i}) {
-					font-size: @start - (@i - 1) * @increment;
-					line-height: 1em;
-				}
-				.shrink-letters(@n, (@i + 1));
-			}
-		}
-	}
-
-	.randomColor() {
-		@r: `(Math.floor(Math.random()*255))`;
-		@g: `(Math.floor(Math.random()*255))`;
-		@b: `(Math.floor(Math.random()*255))`;
-		background-color: rgb(@r, @g, @b);
-	}
-
-	.rotate-slices(24);
-
-	.rotate-slices(@n, @i: 1) when (@i =< @n) {
-		.slice:nth-child(@{i}) {
-			@skew: 90-360deg/@n;
-			@rotate: @i * 360deg/@n;
-
-			transform: rotate(@rotate) skewX(@skew);
-
-			label {
-				transform: skew(-1*@skew) rotate(-1*(@skew+(90deg - @skew)/2));
-			}
-
-			// give each slice a random colour
-			.randomColor();
-		}
-
-		.rotate-slices(@n, (@i + 1));
-	}
-
-	li.center {
-		@size: 25%;
-		position: absolute;
-		height: @size;
-		width: @size;
-		left: (100%-@size)/2;
-		top: (100%-@size)/2;
-		background: blue;
+		background: @color-frame;
 		border-radius: 50%;
+		box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+		padding: @frame-width;
+
+		ul.circle {
+			position: relative;
+			padding: 50%;
+			max-width: 0; max-height: 0;
+			box-shadow: 0 0 .5em rgba(0,0,0,.5);
+			list-style: none;
+			background: @color-frame;
+			overflow: hidden;
+			border-radius: 50%;
+			margin: 0;
+
+			.slice {
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 50%;
+				border: 1px solid @color-frame;
+				box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+				transform-origin: 100% 100%;
+
+				label {
+					display: block;
+					width: 200%;
+					height: 200%;
+					box-shadow: 0 0 .1em black;
+					line-height: 1.9em;
+					text-align: center;
+					text-decoration: none;
+					max-width: 200%;
+
+					span {
+						display: block;
+						text-transform: uppercase;
+					}
+
+					.shrink-letters(4);
+
+					.shrink-letters(@n, @i: 1) when (@i =< @n) {
+						@start: 48px;
+						@increment: 5px;
+
+						span:nth-child(@{i}) {
+							font-size: @start - (@i - 1) * @increment;
+							line-height: 1em;
+						}
+						.shrink-letters(@n, (@i + 1));
+					}
+				}
+			}
+
+			.randomColor() {
+				@r: `(Math.floor(Math.random()*255))`;
+				@g: `(Math.floor(Math.random()*255))`;
+				@b: `(Math.floor(Math.random()*255))`;
+				background-color: rgb(@r, @g, @b);
+			}
+
+			.rotate-slices(24);
+
+			.rotate-slices(@n, @i: 1) when (@i =< @n) {
+				.slice:nth-child(@{i}) {
+					@skew: 90-360deg/@n;
+					@rotate: (@i + 0.5) * 360deg/@n;
+
+					transform: rotate(@rotate) skewX(@skew);
+
+					label {
+						transform: skew(-1*@skew) rotate(-1*(@skew+(90deg - @skew)/2));
+					}
+
+					// give each slice a random colour
+					.randomColor();
+				}
+
+				.rotate-slices(@n, (@i + 1));
+			}
+
+			li.center {
+				@size: 25%;
+				position: absolute;
+				height: @size;
+				width: @size;
+				left: (100%-@size)/2;
+				top: (100%-@size)/2;
+				background: blue;
+				border-radius: 50%;
+			}
+		}
+
+		.pegs {
+			position: absolute;
+			padding: 50%;
+			margin: 0;
+			top: @frame-width;
+			left: @frame-width;
+
+			@peg-size: 10px;
+
+			.peg {
+				height: 0;
+				width: 50%;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform-origin: 100% 100%;
+				list-style: none;
+
+				&:before {
+					content: "";
+					background: @color-peg;
+					position: absolute;
+					top: -1*@frame-width;
+					left: -1*@frame-width;
+					height: @peg-size;
+					width: @peg-size;
+					border-radius: 50%;
+					display: block;
+				}
+			}
+			.rotate-peg(72);
+
+			.rotate-peg(@n, @i: 1) when (@i =< @n) {
+				.peg:nth-child(@{i}) {
+					@rotate: (@i + 0.3) * 360deg/@n;
+					transform: rotate(@rotate);
+				}
+
+				.rotate-peg(@n, (@i + 1));
+			}
+
+		}
+	}
+
+	.pointer {
+		position: absolute;
+		top: 0;
+		left: ~"calc(50% - 5px)";
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 20px 5px 0 5px;
+		border-color: #076591 transparent transparent transparent;
+
 	}
 }
+
+
+
