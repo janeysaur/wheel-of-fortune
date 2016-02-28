@@ -19,7 +19,9 @@ function myWheel() {
     return directive;
 }
 
-function WheelController() {
+WheelController.$inject = ['$timeout'];
+
+function WheelController($timeout) {
     var vm = this;
 
     vm.words = [];
@@ -41,7 +43,14 @@ function WheelController() {
     }
 
     function spinWheel() {
+        if (vm.spinning) {
+            return;
+        }
         vm.spinning = true;
+        $timeout(function() {
+            vm.spinning = false;
+        }, 4000);
+
     }
 
 }

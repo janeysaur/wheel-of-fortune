@@ -1,13 +1,13 @@
 angular.module('wheelOfFortune')
     .controller('WheelOfFortuneController', WheelOfFortuneController);
 
-function WheelOfFortuneController() {
+WheelOfFortuneController.$inject = ['Words'];
+
+function WheelOfFortuneController(Words) {
     var vm = this;
     vm.spaces = [];
 
     var numSpaces = 24;
 
-    for (var i = 0; i < numSpaces; i++) {
-        vm.spaces.push("word");
-    }
+    vm.spaces = Words.getWords(numSpaces);
 }

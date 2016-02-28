@@ -2,6 +2,7 @@
 @color-frame: yellow;
 @color-peg: #777;
 @color-pointer: #777;
+@color-text: #333;
 @frame-width: 14px;
 @peg-size: 10px;
 
@@ -50,7 +51,7 @@
 
 div.wheel {
 	margin: 5em auto;
-	min-width: 16em; width: 72%; max-width: 40em;
+	width: 40em;
 	position: relative;
 	padding: 10px;
 
@@ -59,9 +60,6 @@ div.wheel {
 			animation-name: spin;
 			animation-duration: 4000ms;
 			animation-iteration-count: 1;
-			-webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-			-moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-			-o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
 		}
 
@@ -71,6 +69,10 @@ div.wheel {
 			animation-duration: 2s, 300ms, 500ms;
 			animation-iteration-count: 1, 5, 1;
 			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+		}
+
+		.center:after {
+			visibility: hidden;
 		}
 	}
 
@@ -120,15 +122,29 @@ div.wheel {
 					span {
 						display: block;
 						text-transform: uppercase;
-						padding-top: 5px;
 						line-height: 0.9em;
+						color: @color-text;
+
+						&:first-child {
+							padding-top: 5px;
+						}
 					}
 
-					.shrink-letters(4);
+					&.word-4 {
+						.shrink-letters(4);
+					}
+
+					&.word-5 {
+						.shrink-letters(5);
+					}
+
+					&.word-6 {
+						.shrink-letters(6);
+					}
 
 					.shrink-letters(@n, @i: 1) when (@i =< @n) {
-						@start: 48px;
-						@increment: 6px;
+						@start: 40px;
+						@increment: 2px + (@i - 4) * 1px;
 
 						span:nth-child(@{i}) {
 							font-size: @start - (@i - 1) * @increment;
@@ -139,9 +155,11 @@ div.wheel {
 			}
 
 			.randomColor() {
-				@r: `(Math.floor(Math.random()*255))`;
-				@g: `(Math.floor(Math.random()*255))`;
-				@b: `(Math.floor(Math.random()*255))`;
+				@c: 40;
+				@x: 255 - @c;
+				@r: `(Math.floor(Math.random() * @{x}) + @{c})`;
+				@g: `(Math.floor(Math.random() * @{x}) + @{c})`;
+				@b: `(Math.floor(Math.random() * @{x}) + @{c})`;
 				background-color: rgb(@r, @g, @b);
 			}
 
@@ -174,6 +192,19 @@ div.wheel {
 				top: (100%-@size)/2;
 				background: @color-center;
 				border-radius: 50%;
+
+				&:after {
+					content: "Click to spin";
+					color: white;
+					font-size: 26px;
+					width: 100%;
+					height: 100%;
+					padding: 20px;
+					position: absolute;
+					left: 0;
+					top: 0;
+					text-align: center;
+				}
 			}
 		}
 
@@ -204,7 +235,6 @@ div.wheel {
 					width: @peg-size;
 					border-radius: 50%;
 					display: block;
-					//box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
 				}
 			}
 			.rotate-peg(72);

@@ -1,3 +1,4 @@
 angular.module('wheelOfFortune', [
-    'app.components'
+    'app.components',
+    'app.data'
 ]);
