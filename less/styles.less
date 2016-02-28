@@ -1,3 +1,5 @@
+@import "../bower_components/lesshat/build/lesshat.less";
+
 @color-center: #333;
 @color-frame: yellow;
 @color-peg: #777;
@@ -6,47 +8,33 @@
 @frame-width: 14px;
 @peg-size: 10px;
 
+/*
+.keyframes(~"spin, from{ transform: rotate(0deg); } to{ transform: rotate(360deg); }");
+.keyframes(~"lift, 0%{ transform: rotate(0deg); } 25%{ transform: rotate(-45deg); } 100%{ transform: rotate(-45deg); }");
+.keyframes(~"wiggle, 0%{ transform: rotate(-45deg); } 50%{ transform: rotate(0deg); } 100%{ transform: rotate(-45deg); }");
+.keyframes(~"settle, 0%{ transform: rotate(-45deg); } 100%{ transform: rotate(-0deg); }");
+*/
 
-@keyframes spin {
-	from {
-		transform:rotate(0deg);
-	}
-	to {
-		transform:rotate(360deg);
-	}
+/* hardcode keyframes due to bug in lesshat mixin */
+@-webkit-keyframes spin{ from{ -webkit-transform: rotate(0deg); } to{ -webkit-transform: rotate(360deg); }}
+@-moz-keyframes spin{ from{ -moz-transform: rotate(0deg); } to{ -moz-transform: rotate(360deg); }}
+@-o-keyframes spin{ from{ -o-transform: rotate(0deg); } to{ -o-transform: rotate(360deg); }}
+@keyframes spin{ from{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg); } to{-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg); }
 }
-
-@keyframes lift {
-	0% {
-		transform: rotate(0deg);
-	}
-	25% {
-		transform: rotate(-45deg);
-	}
-	100% {
-		transform: rotate(-45deg);
-	}
+@-webkit-keyframes lift{ 0%{ -webkit-transform: rotate(0deg); } 25%{ -webkit-transform: rotate(-45deg); } 100%{ -webkit-transform: rotate(-45deg); }}
+@-moz-keyframes lift{ 0%{ -moz-transform: rotate(0deg); } 25%{ -moz-transform: rotate(-45deg); } 100%{ -moz-transform: rotate(-45deg); }}
+@-o-keyframes lift{ 0%{ -o-transform: rotate(0deg); } 25%{ -o-transform: rotate(-45deg); } 100%{ -o-transform: rotate(-45deg); }}
+@keyframes lift{ 0%{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg); } 25%{-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); } 100%{-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); }
 }
-
-@keyframes wiggle {
-	0% {
-		transform: rotate(-45deg);
-	}
-	50% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(-45deg);
-	}
+@-webkit-keyframes wiggle{ 0%{ -webkit-transform: rotate(-45deg); } 50%{ -webkit-transform: rotate(0deg); } 100%{ -webkit-transform: rotate(-45deg); }}
+@-moz-keyframes wiggle{ 0%{ -moz-transform: rotate(-45deg); } 50%{ -moz-transform: rotate(0deg); } 100%{ -moz-transform: rotate(-45deg); }}
+@-o-keyframes wiggle{ 0%{ -o-transform: rotate(-45deg); } 50%{ -o-transform: rotate(0deg); } 100%{ -o-transform: rotate(-45deg); }}
+@keyframes wiggle{ 0%{-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); } 50%{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg); } 100%{-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); }
 }
-
-@keyframes settle {
-	0% {
-		transform: rotate(-45deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
+@-webkit-keyframes settle{ 0%{ -webkit-transform: rotate(-45deg); } 100%{ -webkit-transform: rotate(-0deg); }}
+@-moz-keyframes settle{ 0%{ -moz-transform: rotate(-45deg); } 100%{ -moz-transform: rotate(-0deg); }}
+@-o-keyframes settle{ 0%{ -o-transform: rotate(-45deg); } 100%{ -o-transform: rotate(-0deg); }}
+@keyframes settle{ 0%{-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); } 100%{-webkit-transform: rotate(-0deg);-moz-transform: rotate(-0deg);-ms-transform: rotate(-0deg);transform: rotate(-0deg); }
 }
 
 div.wheel {
@@ -57,18 +45,18 @@ div.wheel {
 
 	&.spin {
 		.frame {
-			animation-name: spin;
-			animation-duration: 4000ms;
-			animation-iteration-count: 1;
-			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+			.animation-name(spin);
+			.animation-duration(4000ms);
+			.animation-iteration-count(1);
+			.transition-timing-function(cubic-bezier(1.000, 0.000, 0.000, 1.000)); /* easeInOutExpo */
 		}
 
 		.pointer {
-			animation-name: lift, wiggle, settle;
-			animation-delay: 0s, 2s, 3500ms;
-			animation-duration: 2s, 300ms, 500ms;
-			animation-iteration-count: 1, 5, 1;
-			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+			.animation-name(lift, wiggle, settle);
+			.animation-delay(0s, 2000ms, 3500ms);
+			.animation-duration(2000ms, 300ms, 500ms);
+			.animation-iteration-count(1, 5, 1);
+			.transition-timing-function(cubic-bezier(1.000, 0.000, 0.000, 1.000)); /* easeInOutExpo */
 		}
 
 		.center:after {
@@ -107,7 +95,7 @@ div.wheel {
 				height: 50%;
 				border: 1px solid @color-frame;
 				box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
-				transform-origin: 100% 100%;
+				.transform-origin(100% 100%);
 
 				label {
 					display: block;
@@ -155,7 +143,7 @@ div.wheel {
 			}
 
 			.randomColor() {
-				@c: 40;
+				@c: 50;
 				@x: 255 - @c;
 				@r: `(Math.floor(Math.random() * @{x}) + @{c})`;
 				@g: `(Math.floor(Math.random() * @{x}) + @{c})`;
@@ -170,10 +158,10 @@ div.wheel {
 					@skew: 90-360deg/@n;
 					@rotate: (@i + 0.5) * 360deg/@n;
 
-					transform: rotate(@rotate) skewX(@skew);
+					.transform(rotate(@rotate) skewX(@skew));
 
 					label {
-						transform: skew(-1*@skew) rotate(-1*(@skew+(90deg - @skew)/2));
+						.transform(skew(-1*@skew) rotate(-1*(@skew+(90deg - @skew)/2)));
 					}
 
 					// give each slice a random colour
@@ -222,7 +210,7 @@ div.wheel {
 				position: absolute;
 				left: 0;
 				top: 50%;
-				transform-origin: 100% 100%;
+				.transform-origin(100% 100%);
 				list-style: none;
 
 				&:before {
@@ -242,7 +230,7 @@ div.wheel {
 			.rotate-peg(@n, @i: 1) when (@i =< @n) {
 				.peg:nth-child(@{i}) {
 					@rotate: (@i + 0.3) * 360deg/@n;
-					transform: rotate(@rotate);
+					.transform(rotate(@rotate));
 				}
 
 				.rotate-peg(@n, (@i + 1));
