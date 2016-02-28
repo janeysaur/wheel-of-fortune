@@ -346,7 +346,7 @@ div.wheel .frame ul.circle .slice:nth-child(1) {
   -o-transform: rotate(22.5deg) skewX(75deg);
   -ms-transform: rotate(22.5deg) skewX(75deg);
   transform: rotate(22.5deg) skewX(75deg);
-  background-color: #8e4d46;
+  background-color: #9798a1;
 }
 div.wheel .frame ul.circle .slice:nth-child(1) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -361,7 +361,7 @@ div.wheel .frame ul.circle .slice:nth-child(2) {
   -o-transform: rotate(37.5deg) skewX(75deg);
   -ms-transform: rotate(37.5deg) skewX(75deg);
   transform: rotate(37.5deg) skewX(75deg);
-  background-color: #56bd75;
+  background-color: #d6fcd2;
 }
 div.wheel .frame ul.circle .slice:nth-child(2) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -376,7 +376,7 @@ div.wheel .frame ul.circle .slice:nth-child(3) {
   -o-transform: rotate(52.5deg) skewX(75deg);
   -ms-transform: rotate(52.5deg) skewX(75deg);
   transform: rotate(52.5deg) skewX(75deg);
-  background-color: #7c819b;
+  background-color: #da67d0;
 }
 div.wheel .frame ul.circle .slice:nth-child(3) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -391,7 +391,7 @@ div.wheel .frame ul.circle .slice:nth-child(4) {
   -o-transform: rotate(67.5deg) skewX(75deg);
   -ms-transform: rotate(67.5deg) skewX(75deg);
   transform: rotate(67.5deg) skewX(75deg);
-  background-color: #c1425d;
+  background-color: #dd8858;
 }
 div.wheel .frame ul.circle .slice:nth-child(4) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -406,7 +406,7 @@ div.wheel .frame ul.circle .slice:nth-child(5) {
   -o-transform: rotate(82.5deg) skewX(75deg);
   -ms-transform: rotate(82.5deg) skewX(75deg);
   transform: rotate(82.5deg) skewX(75deg);
-  background-color: #91d0db;
+  background-color: #4954ac;
 }
 div.wheel .frame ul.circle .slice:nth-child(5) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -421,7 +421,7 @@ div.wheel .frame ul.circle .slice:nth-child(6) {
   -o-transform: rotate(97.5deg) skewX(75deg);
   -ms-transform: rotate(97.5deg) skewX(75deg);
   transform: rotate(97.5deg) skewX(75deg);
-  background-color: #dc4037;
+  background-color: #d545b7;
 }
 div.wheel .frame ul.circle .slice:nth-child(6) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -436,7 +436,7 @@ div.wheel .frame ul.circle .slice:nth-child(7) {
   -o-transform: rotate(112.5deg) skewX(75deg);
   -ms-transform: rotate(112.5deg) skewX(75deg);
   transform: rotate(112.5deg) skewX(75deg);
-  background-color: #ea85eb;
+  background-color: #38a5ce;
 }
 div.wheel .frame ul.circle .slice:nth-child(7) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -451,7 +451,7 @@ div.wheel .frame ul.circle .slice:nth-child(8) {
   -o-transform: rotate(127.5deg) skewX(75deg);
   -ms-transform: rotate(127.5deg) skewX(75deg);
   transform: rotate(127.5deg) skewX(75deg);
-  background-color: #a090af;
+  background-color: #c23562;
 }
 div.wheel .frame ul.circle .slice:nth-child(8) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -466,7 +466,7 @@ div.wheel .frame ul.circle .slice:nth-child(9) {
   -o-transform: rotate(142.5deg) skewX(75deg);
   -ms-transform: rotate(142.5deg) skewX(75deg);
   transform: rotate(142.5deg) skewX(75deg);
-  background-color: #775c4a;
+  background-color: #e38aa1;
 }
 div.wheel .frame ul.circle .slice:nth-child(9) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -481,7 +481,7 @@ div.wheel .frame ul.circle .slice:nth-child(10) {
   -o-transform: rotate(157.5deg) skewX(75deg);
   -ms-transform: rotate(157.5deg) skewX(75deg);
   transform: rotate(157.5deg) skewX(75deg);
-  background-color: #b58e5e;
+  background-color: #88e84c;
 }
 div.wheel .frame ul.circle .slice:nth-child(10) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -496,7 +496,7 @@ div.wheel .frame ul.circle .slice:nth-child(11) {
   -o-transform: rotate(172.5deg) skewX(75deg);
   -ms-transform: rotate(172.5deg) skewX(75deg);
   transform: rotate(172.5deg) skewX(75deg);
-  background-color: #58893b;
+  background-color: #e4dcfe;
 }
 div.wheel .frame ul.circle .slice:nth-child(11) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -511,7 +511,7 @@ div.wheel .frame ul.circle .slice:nth-child(12) {
   -o-transform: rotate(187.5deg) skewX(75deg);
   -ms-transform: rotate(187.5deg) skewX(75deg);
   transform: rotate(187.5deg) skewX(75deg);
-  background-color: #73beb8;
+  background-color: #bdbbb4;
 }
 div.wheel .frame ul.circle .slice:nth-child(12) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -526,7 +526,7 @@ div.wheel .frame ul.circle .slice:nth-child(13) {
   -o-transform: rotate(202.5deg) skewX(75deg);
   -ms-transform: rotate(202.5deg) skewX(75deg);
   transform: rotate(202.5deg) skewX(75deg);
-  background-color: #594bde;
+  background-color: #64724c;
 }
 div.wheel .frame ul.circle .slice:nth-child(13) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -541,7 +541,7 @@ div.wheel .frame ul.circle .slice:nth-child(14) {
   -o-transform: rotate(217.5deg) skewX(75deg);
   -ms-transform: rotate(217.5deg) skewX(75deg);
   transform: rotate(217.5deg) skewX(75deg);
-  background-color: #6f56fb;
+  background-color: #5ba86c;
 }
 div.wheel .frame ul.circle .slice:nth-child(14) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -556,7 +556,7 @@ div.wheel .frame ul.circle .slice:nth-child(15) {
   -o-transform: rotate(232.5deg) skewX(75deg);
   -ms-transform: rotate(232.5deg) skewX(75deg);
   transform: rotate(232.5deg) skewX(75deg);
-  background-color: #aeaa49;
+  background-color: #d58952;
 }
 div.wheel .frame ul.circle .slice:nth-child(15) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -571,7 +571,7 @@ div.wheel .frame ul.circle .slice:nth-child(16) {
   -o-transform: rotate(247.5deg) skewX(75deg);
   -ms-transform: rotate(247.5deg) skewX(75deg);
   transform: rotate(247.5deg) skewX(75deg);
-  background-color: #679a7f;
+  background-color: #914ab6;
 }
 div.wheel .frame ul.circle .slice:nth-child(16) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -586,7 +586,7 @@ div.wheel .frame ul.circle .slice:nth-child(17) {
   -o-transform: rotate(262.5deg) skewX(75deg);
   -ms-transform: rotate(262.5deg) skewX(75deg);
   transform: rotate(262.5deg) skewX(75deg);
-  background-color: #86897c;
+  background-color: #5f6abf;
 }
 div.wheel .frame ul.circle .slice:nth-child(17) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -601,7 +601,7 @@ div.wheel .frame ul.circle .slice:nth-child(18) {
   -o-transform: rotate(277.5deg) skewX(75deg);
   -ms-transform: rotate(277.5deg) skewX(75deg);
   transform: rotate(277.5deg) skewX(75deg);
-  background-color: #677a66;
+  background-color: #726277;
 }
 div.wheel .frame ul.circle .slice:nth-child(18) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -616,7 +616,7 @@ div.wheel .frame ul.circle .slice:nth-child(19) {
   -o-transform: rotate(292.5deg) skewX(75deg);
   -ms-transform: rotate(292.5deg) skewX(75deg);
   transform: rotate(292.5deg) skewX(75deg);
-  background-color: #ab64c3;
+  background-color: #f553a6;
 }
 div.wheel .frame ul.circle .slice:nth-child(19) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -631,7 +631,7 @@ div.wheel .frame ul.circle .slice:nth-child(20) {
   -o-transform: rotate(307.5deg) skewX(75deg);
   -ms-transform: rotate(307.5deg) skewX(75deg);
   transform: rotate(307.5deg) skewX(75deg);
-  background-color: #3d5b71;
+  background-color: #fe6d4f;
 }
 div.wheel .frame ul.circle .slice:nth-child(20) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -646,7 +646,7 @@ div.wheel .frame ul.circle .slice:nth-child(21) {
   -o-transform: rotate(322.5deg) skewX(75deg);
   -ms-transform: rotate(322.5deg) skewX(75deg);
   transform: rotate(322.5deg) skewX(75deg);
-  background-color: #703aee;
+  background-color: #e08bee;
 }
 div.wheel .frame ul.circle .slice:nth-child(21) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -661,7 +661,7 @@ div.wheel .frame ul.circle .slice:nth-child(22) {
   -o-transform: rotate(337.5deg) skewX(75deg);
   -ms-transform: rotate(337.5deg) skewX(75deg);
   transform: rotate(337.5deg) skewX(75deg);
-  background-color: #7c6752;
+  background-color: #73c391;
 }
 div.wheel .frame ul.circle .slice:nth-child(22) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -676,7 +676,7 @@ div.wheel .frame ul.circle .slice:nth-child(23) {
   -o-transform: rotate(352.5deg) skewX(75deg);
   -ms-transform: rotate(352.5deg) skewX(75deg);
   transform: rotate(352.5deg) skewX(75deg);
-  background-color: #add7a3;
+  background-color: #81e689;
 }
 div.wheel .frame ul.circle .slice:nth-child(23) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -691,7 +691,7 @@ div.wheel .frame ul.circle .slice:nth-child(24) {
   -o-transform: rotate(367.5deg) skewX(75deg);
   -ms-transform: rotate(367.5deg) skewX(75deg);
   transform: rotate(367.5deg) skewX(75deg);
-  background-color: #5eb974;
+  background-color: #9ebf78;
 }
 div.wheel .frame ul.circle .slice:nth-child(24) label {
   -webkit-transform: skew(-75deg) rotate(-82.5deg);
@@ -723,7 +723,7 @@ div.wheel .frame ul.circle li.center:after {
 }
 div.wheel .frame .pegs {
   position: absolute;
-  padding: 50%;
+  padding: 256px;
   margin: 0;
   top: 14px;
   left: 14px;
