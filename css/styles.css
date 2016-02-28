@@ -1,0 +1,253 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+div.wheel {
+  margin: 5em auto;
+  min-width: 16em;
+  width: 72%;
+  max-width: 40em;
+}
+div.wheel.spin {
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+ul.circle {
+  position: relative;
+  padding: 50%;
+  max-width: 0;
+  max-height: 0;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  list-style: none;
+  background: black;
+  overflow: hidden;
+}
+ul.circle,
+ul.circle:before,
+ul.circle:after {
+  border-radius: 50%;
+}
+ul.circle .slice {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  border: 1px solid black;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  transform-origin: 100% 100%;
+}
+ul.circle .slice label {
+  display: block;
+  width: 200%;
+  height: 200%;
+  box-shadow: 0 0 .1em black;
+  line-height: 1.9em;
+  text-align: center;
+  text-decoration: none;
+  max-width: 200%;
+}
+ul.circle .slice label span {
+  display: block;
+  text-transform: uppercase;
+}
+ul.circle .slice label span:nth-child(1) {
+  font-size: 48px;
+  line-height: 1em;
+}
+ul.circle .slice label span:nth-child(2) {
+  font-size: 43px;
+  line-height: 1em;
+}
+ul.circle .slice label span:nth-child(3) {
+  font-size: 38px;
+  line-height: 1em;
+}
+ul.circle .slice label span:nth-child(4) {
+  font-size: 33px;
+  line-height: 1em;
+}
+ul.circle .slice:nth-child(1) {
+  transform: rotate(15deg) skewX(75deg);
+  background-color: #218cbd;
+}
+ul.circle .slice:nth-child(1) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(2) {
+  transform: rotate(30deg) skewX(75deg);
+  background-color: #85e84b;
+}
+ul.circle .slice:nth-child(2) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(3) {
+  transform: rotate(45deg) skewX(75deg);
+  background-color: #9f22e8;
+}
+ul.circle .slice:nth-child(3) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(4) {
+  transform: rotate(60deg) skewX(75deg);
+  background-color: #1f7adb;
+}
+ul.circle .slice:nth-child(4) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(5) {
+  transform: rotate(75deg) skewX(75deg);
+  background-color: #347b0e;
+}
+ul.circle .slice:nth-child(5) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(6) {
+  transform: rotate(90deg) skewX(75deg);
+  background-color: #e580e7;
+}
+ul.circle .slice:nth-child(6) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(7) {
+  transform: rotate(105deg) skewX(75deg);
+  background-color: #a1d382;
+}
+ul.circle .slice:nth-child(7) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(8) {
+  transform: rotate(120deg) skewX(75deg);
+  background-color: #44f0aa;
+}
+ul.circle .slice:nth-child(8) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(9) {
+  transform: rotate(135deg) skewX(75deg);
+  background-color: #3581e5;
+}
+ul.circle .slice:nth-child(9) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(10) {
+  transform: rotate(150deg) skewX(75deg);
+  background-color: #2a5208;
+}
+ul.circle .slice:nth-child(10) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(11) {
+  transform: rotate(165deg) skewX(75deg);
+  background-color: #dbd2d3;
+}
+ul.circle .slice:nth-child(11) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(12) {
+  transform: rotate(180deg) skewX(75deg);
+  background-color: #30d562;
+}
+ul.circle .slice:nth-child(12) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(13) {
+  transform: rotate(195deg) skewX(75deg);
+  background-color: #fef254;
+}
+ul.circle .slice:nth-child(13) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(14) {
+  transform: rotate(210deg) skewX(75deg);
+  background-color: #eadad6;
+}
+ul.circle .slice:nth-child(14) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(15) {
+  transform: rotate(225deg) skewX(75deg);
+  background-color: #49655d;
+}
+ul.circle .slice:nth-child(15) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(16) {
+  transform: rotate(240deg) skewX(75deg);
+  background-color: #d6aecf;
+}
+ul.circle .slice:nth-child(16) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(17) {
+  transform: rotate(255deg) skewX(75deg);
+  background-color: #7cde3e;
+}
+ul.circle .slice:nth-child(17) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(18) {
+  transform: rotate(270deg) skewX(75deg);
+  background-color: #154946;
+}
+ul.circle .slice:nth-child(18) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(19) {
+  transform: rotate(285deg) skewX(75deg);
+  background-color: #cf0d00;
+}
+ul.circle .slice:nth-child(19) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(20) {
+  transform: rotate(300deg) skewX(75deg);
+  background-color: #bd1167;
+}
+ul.circle .slice:nth-child(20) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(21) {
+  transform: rotate(315deg) skewX(75deg);
+  background-color: #63c8b8;
+}
+ul.circle .slice:nth-child(21) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(22) {
+  transform: rotate(330deg) skewX(75deg);
+  background-color: #08d1bc;
+}
+ul.circle .slice:nth-child(22) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(23) {
+  transform: rotate(345deg) skewX(75deg);
+  background-color: #a2c46d;
+}
+ul.circle .slice:nth-child(23) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle .slice:nth-child(24) {
+  transform: rotate(360deg) skewX(75deg);
+  background-color: #a7794b;
+}
+ul.circle .slice:nth-child(24) label {
+  transform: skew(-75deg) rotate(-82.5deg);
+}
+ul.circle li.center {
+  position: absolute;
+  height: 25%;
+  width: 25%;
+  left: 37.5%;
+  top: 37.5%;
+  background: blue;
+  border-radius: 50%;
+}
