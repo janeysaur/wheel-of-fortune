@@ -10,6 +10,16 @@ module.exports = function(grunt) {
                 files: {
                     "css/styles.css": "less/styles.less"
                 }
+            },
+            release: {
+                options: {
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                files: {
+                    "css/styles.css": "less/styles.less"
+                }
             }
         },
         clean: {
@@ -68,6 +78,17 @@ module.exports = function(grunt) {
                 src: ['js/apps/*.js'],
                 dest: 'js/apps/app.js'
             }
+        },
+        uglify: {
+            app: {
+                files: {
+                    'js/apps/app.js' : ['js/apps/build.js', 'js/apps/templates.js']
+                },
+                options: {
+                    mangle: false,
+                    beautify: false
+                }
+            }
         }
     });
 
@@ -76,9 +97,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('build:app', ['clean:app', 'angular-builder:app', 'ngtemplates:app', 'concat:app']);
+
+    grunt.registerTask('release', ['build:app', 'uglify:app', 'less:release']);
 
     grunt.registerTask('default', ['build:app', 'less:development', 'watch']);
 };
