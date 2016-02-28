@@ -241,13 +241,14 @@ div.wheel {
 
 	.pointer {
 		position: absolute;
-		top: 0;
+		top: 3px;
 		left: ~"calc(50% - 5px)";
 		width: 0px;
 		height: 0px;
 		border-style: solid;
 		border-width: 20px 5px 0 5px;
 		border-color: @color-pointer transparent transparent transparent;
+		.transform-origin(5px -10px);
 
 		&:before {
 			content: "";
