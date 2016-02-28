@@ -1,6 +1,10 @@
+@color-center: #333;
 @color-frame: yellow;
-@color-peg: blue;
-@frame-width: 10px;
+@color-peg: #777;
+@color-pointer: #777;
+@frame-width: 14px;
+@peg-size: 10px;
+
 
 @keyframes spin {
 	from {
@@ -8,6 +12,39 @@
 	}
 	to {
 		transform:rotate(360deg);
+	}
+}
+
+@keyframes lift {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-45deg);
+	}
+	100% {
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(-45deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes settle {
+	0% {
+		transform: rotate(-45deg);
+	}
+	100% {
+		transform: rotate(0deg);
 	}
 }
 
@@ -26,7 +63,14 @@ div.wheel {
 			-moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 			-o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+		}
 
+		.pointer {
+			animation-name: lift, wiggle, settle;
+			animation-delay: 0s, 2s, 3500ms;
+			animation-duration: 2s, 300ms, 500ms;
+			animation-iteration-count: 1, 5, 1;
+			transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
 		}
 	}
 
@@ -76,17 +120,18 @@ div.wheel {
 					span {
 						display: block;
 						text-transform: uppercase;
+						padding-top: 5px;
+						line-height: 0.9em;
 					}
 
 					.shrink-letters(4);
 
 					.shrink-letters(@n, @i: 1) when (@i =< @n) {
 						@start: 48px;
-						@increment: 5px;
+						@increment: 6px;
 
 						span:nth-child(@{i}) {
 							font-size: @start - (@i - 1) * @increment;
-							line-height: 1em;
 						}
 						.shrink-letters(@n, (@i + 1));
 					}
@@ -127,7 +172,7 @@ div.wheel {
 				width: @size;
 				left: (100%-@size)/2;
 				top: (100%-@size)/2;
-				background: blue;
+				background: @color-center;
 				border-radius: 50%;
 			}
 		}
@@ -139,7 +184,6 @@ div.wheel {
 			top: @frame-width;
 			left: @frame-width;
 
-			@peg-size: 10px;
 
 			.peg {
 				height: 0;
@@ -154,12 +198,13 @@ div.wheel {
 					content: "";
 					background: @color-peg;
 					position: absolute;
-					top: -1*@frame-width;
-					left: -1*@frame-width;
+					top: -1*(@frame-width - (@frame-width - @peg-size)/2);
+					left: -1*(@frame-width - (@frame-width - @peg-size)/2);
 					height: @peg-size;
 					width: @peg-size;
 					border-radius: 50%;
 					display: block;
+					//box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
 				}
 			}
 			.rotate-peg(72);
@@ -184,8 +229,20 @@ div.wheel {
 		height: 0px;
 		border-style: solid;
 		border-width: 20px 5px 0 5px;
-		border-color: #076591 transparent transparent transparent;
+		border-color: @color-pointer transparent transparent transparent;
 
+		&:before {
+			content: "";
+			display: block;
+			height: 10px;
+			width: 10px;
+			position: absolute;
+			top: -30px;
+			background: @color-pointer;
+			left: -5px;
+			border-top-left-radius: 50%;
+			border-top-right-radius: 50%;
+		}
 	}
 }
 
